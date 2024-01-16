@@ -80,70 +80,72 @@ export default function Home() {
 				<div className="row border bg-light my-lg-3 py-3">
 					{/*----- data form start -----*/}
 					<div className="col-md-6">
-						<div className="col-md-12 pb-3">
-							<label htmlFor="total_volume" className="form-label">
-								Total Concrete Volume (CFT)
-							</label>
-							<input
-								type="number"
-								className="form-control"
-								id="total_volume"
-								value={totalVolume}
-								onChange={(e) => setTotalVolume(parseFloat(e.target.value))}
-								required
-							/>
-						</div>
-						<div className="col-md-12 pb-3">
-							<div className="row">
-								<div className="col-md-4 pb-3">
-									<label htmlFor="ratio_cement" className="form-label">
-										Cement Ratio
-									</label>
-									<input
-										type="number"
-										className="form-control"
-										id="ratio_cement"
-										value={ratioCement}
-										onChange={(e) => setRatioCement(parseFloat(e.target.value))}
-										required
-									/>
-								</div>
-								<div className="col-md-4 pb-3">
-									<label htmlFor="ratio_sand" className="form-label">
-										Sand Ratio
-									</label>
-									<input
-										type="number"
-										className="form-control"
-										id="ratio_sand"
-										value={ratioSand}
-										onChange={(e) => setRatioSand(parseFloat(e.target.value))}
-										required
-									/>
-								</div>
-								<div className="col-md-4 pb-3">
-									<label htmlFor="ratio_stone" className="form-label">
-										Stone Ratio
-									</label>
-									<input
-										type="number"
-										className="form-control"
-										id="ratio_stone"
-										value={ratioStone}
-										onChange={(e) => setRatioStone(parseFloat(e.target.value))}
-										required
-									/>
+						<div className="row">
+							<div className="col-md-12 pb-3">
+								<label htmlFor="total_volume" className="form-label">
+									Total Concrete Volume (CFT)
+								</label>
+								<input
+									type="number"
+									className="form-control"
+									id="total_volume"
+									value={totalVolume}
+									onChange={(e) => setTotalVolume(parseFloat(e.target.value))}
+									required
+								/>
+							</div>
+							<div className="col-md-12 pb-3">
+								<div className="row">
+									<div className="col-md-4 pb-3">
+										<label htmlFor="ratio_cement" className="form-label">
+											Cement Ratio
+										</label>
+										<input
+											type="number"
+											className="form-control"
+											id="ratio_cement"
+											value={ratioCement}
+											onChange={(e) => setRatioCement(parseFloat(e.target.value))}
+											required
+										/>
+									</div>
+									<div className="col-md-4 pb-3">
+										<label htmlFor="ratio_sand" className="form-label">
+											Sand Ratio
+										</label>
+										<input
+											type="number"
+											className="form-control"
+											id="ratio_sand"
+											value={ratioSand}
+											onChange={(e) => setRatioSand(parseFloat(e.target.value))}
+											required
+										/>
+									</div>
+									<div className="col-md-4 pb-3">
+										<label htmlFor="ratio_stone" className="form-label">
+											Stone Ratio
+										</label>
+										<input
+											type="number"
+											className="form-control"
+											id="ratio_stone"
+											value={ratioStone}
+											onChange={(e) => setRatioStone(parseFloat(e.target.value))}
+											required
+										/>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className="col-md-6">
-							<button type="button" className="btn btn-secondary w-100" onClick={calculateConcrete}>
-								Calculate
-							</button>
-						</div>
-						<div className={`col-md-6 mt-2 mt-lg-0 ${loading === 100 && 'd-none'}`}>
-							<div className="progress" role="progressbar" style={{ height: '38px' }}>
-								<div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width: loading + '%' }}></div>
+							<div className="col-md-6">
+								<button type="button" className="btn btn-secondary w-100" onClick={calculateConcrete}>
+									Calculate
+								</button>
+							</div>
+							<div className={`col-md-6 mt-2 mt-lg-0 ${loading === 100 && 'd-none'}`}>
+								<div className="progress" role="progressbar" style={{ height: '38px' }}>
+									<div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width: loading + '%' }}></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -151,46 +153,48 @@ export default function Home() {
 
 					{/*----- rate form start -----*/}
 					<div className="col-md-6 mt-5 mt-lg-0">
-						<div className="col-md-12 pb-3">
-							<label htmlFor="rate_cement" className="form-label">
-								Rate Cement (Bag)
-							</label>
-							<input
-								type="number"
-								className="form-control"
-								id="rate_cement"
-								value={rateCement}
-								onChange={(e) => setRateCement(parseFloat(e.target.value))}
-								required
-							/>
-						</div>
-						<div className="col-md-12 pb-3">
-							<div className="row">
-								<div className="col-md-6 pb-3">
-									<label htmlFor="rate_sand" className="form-label">
-										Rate Sand (CFT)
-									</label>
-									<input
-										type="number"
-										className="form-control"
-										id="rate_sand"
-										value={rateSand}
-										onChange={(e) => setRateSand(parseFloat(e.target.value))}
-										required
-									/>
-								</div>
-								<div className="col-md-6 pb-3">
-									<label htmlFor="rate_stone" className="form-label">
-										Rate Stone (CFT)
-									</label>
-									<input
-										type="number"
-										className="form-control"
-										id="rate_stone"
-										value={rateStone}
-										onChange={(e) => setRateStone(parseFloat(e.target.value))}
-										required
-									/>
+						<div className="row">
+							<div className="col-md-12 pb-3">
+								<label htmlFor="rate_cement" className="form-label">
+									Rate Cement (Bag)
+								</label>
+								<input
+									type="number"
+									className="form-control"
+									id="rate_cement"
+									value={rateCement}
+									onChange={(e) => setRateCement(parseFloat(e.target.value))}
+									required
+								/>
+							</div>
+							<div className="col-md-12 pb-3">
+								<div className="row">
+									<div className="col-md-6 pb-3">
+										<label htmlFor="rate_sand" className="form-label">
+											Rate Sand (CFT)
+										</label>
+										<input
+											type="number"
+											className="form-control"
+											id="rate_sand"
+											value={rateSand}
+											onChange={(e) => setRateSand(parseFloat(e.target.value))}
+											required
+										/>
+									</div>
+									<div className="col-md-6 pb-3">
+										<label htmlFor="rate_stone" className="form-label">
+											Rate Stone (CFT)
+										</label>
+										<input
+											type="number"
+											className="form-control"
+											id="rate_stone"
+											value={rateStone}
+											onChange={(e) => setRateStone(parseFloat(e.target.value))}
+											required
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
