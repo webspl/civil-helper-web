@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Helper -Application List</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="z-assets/bootstrap.min.css" rel="stylesheet">
+    <link href="z-assets/datatables.min.css" rel="stylesheet">
+</head>
+<body class="container bg-secondary-subtle">
+    <div class="my-3 p-3 bg-white">
+        <h1 class="h3 pb-1 mb-3 border-bottom">Civil Helper -Application List</h1>
+		<div class="table-responsive">
+			<!-- table list start -->
+			<table id="app_list_table" class="table table-bordered table-hover nowrap w-100">
+				<thead>
+					<tr class="table-secondary">
+						<th class="text-center" style="min-width: 40px">SL</th>
+						<th class="text-center" style="min-width: 60px">Action</th>
+						<th style="min-width: 200px">App Name</th>
+						<th style="min-width: 300px">Short Description</th>
+					</tr>
+				</thead>
+				<tbody>
+		
+		
+					<!-- application list start -->
+					<tr>
+						<td class="text-center">1</td>
+						<td class="text-center">
+							<a class="btn btn-sm btn-secondary" href="con-volume-est">
+								Use App
+							</a>
+						</td>
+						<td>Concrete Voule Estimator</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td class="text-center">
+							<a class="btn btn-sm btn-secondary" href="con-mix-design">
+								Use App
+							</a>
+						</td>
+						<td>Concrete Mix Design</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="text-center">3</td>
+						<td class="text-center">
+							<a class="btn btn-sm btn-secondary" href="res-building-cost-assumption">
+								Use App
+							</a>
+						</td>
+						<td>Residential Building Cost Assumption</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="text-center">4</td>
+						<td class="text-center">
+							<a class="btn btn-sm btn-secondary" href="brick-morter-est">
+								Use App
+							</a>
+						</td>
+						<td>Brick Morter Estimator</td>
+						<td></td>
+					</tr>
+					<!-- application list end -->
+		
+		
+				</tbody>
+				<tfoot>
+					<tr class="table-secondary">
+						<th class="text-center">SL</th>
+						<th class="text-center">Action</th>
+						<th>App Name</th>
+						<th>Short Description</th>
+					</tr>
+				</tfoot>
+			</table>
+			<!-- table list end -->
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-md-4">
+			<p class="text-muted"><small>Developed By: AL SHIMBIL KHAN</small></p>
+		</div>
+		<div class="col-md-4 text-start text-md-center text-muted">
+			<a href="#" class="pe-2 text-decoration-none text-muted">
+				<small>Windows</small>
+			</a> 
+			<small>|</small>
+			<a href="#" class="px-2 text-decoration-none text-muted">
+				<small>Android</small>
+			</a> 
+			<small>|</small>
+			<a href="#" class="px-2 text-decoration-none text-muted">
+				<small>Mac</small>
+			</a> 
+			<small>|</small>
+			<a href="#" class="px-2 text-decoration-none text-muted">
+				<small>Linux</small>
+			</a>
+		</div>
+		<div class="col-md-4 text-start text-md-end">
+			<p class="text-muted"><small>Caution: use at your own risk.</small></p>
+		</div>
+	</div>
+
+
+    <script src="z-assets/jquery-3.7.0.min.js"></script>
+    <script src="z-assets/bootstrap.bundle.min.js"></script>
+    <script src="z-assets/datatables.min.js"></script>
+    <script>
+        new DataTable('#app_list_table', {
+			responsive: true
+		});
+    </script>
+</body>
+</html>
