@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Civil Helper -App List (v1.10)</title>
+    <title>Civil Helper</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="z-assets/bootstrap.min.css" rel="stylesheet">
     <link href="z-assets/datatables.min.css" rel="stylesheet">
 </head>
 <body class="container bg-secondary-subtle">
     <div class="my-3 p-3 bg-white">
-        <h1 class="h3 pb-1 mb-3 border-bottom">Civil Helper -App List (v1.10)</h1>
+        <h1 class="h3 pb-1 mb-3 border-bottom">Civil Helper -App List (v1.11)</h1>
 		<div class="table-responsive">
 			<!-- table list start -->
 			<table id="app_list_table" class="table table-bordered table-hover nowrap w-100">
@@ -84,7 +84,10 @@
     </div>
 	<div class="row">
 		<div class="col-md-4">
-			<p class="text-muted"><small>Developed By: AL SHIMBIL KHAN</small></p>
+			<p class="text-muted">
+				<small>Developed By: Al Shimbil Khan</small><br/>
+				<small>& Sifat E. Noor (BUET)</small>
+			</p>
 		</div>
 		<div class="col-md-4 text-start text-md-center text-muted">
 			<a href="#" class="pe-2 text-decoration-none text-muted">
@@ -105,7 +108,8 @@
 		</div>
 		<div class="col-md-4 text-start text-md-end">
 			<p class="text-muted">
-				<small>Caution: use at your own risk. hard refresh to apply latest update.</small>
+				<small>Caution: use at your own risk.</small><br/>
+				<small>Clear cache to apply latest update.</small><br/>
 			</p>
 		</div>
 	</div>
@@ -116,7 +120,8 @@
     <script src="z-assets/datatables.min.js"></script>
     <script>
         new DataTable('#app_list_table', {
-			responsive: true
+			responsive: true,
+			order: [[0, 'desc']]
 		});
     </script>
 </body>
