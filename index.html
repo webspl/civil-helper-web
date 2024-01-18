@@ -7,6 +7,15 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="z-assets/bootstrap.min.css" rel="stylesheet">
     <link href="z-assets/datatables.min.css" rel="stylesheet">
+    <link href="z-assets/sweetalert2.min.css" rel="stylesheet">
+	<style>
+		@media screen and (max-width: 767px) {
+			/* --- DataTable --- */
+			.dataTables_length {
+				display: none;
+			}
+		}
+	</style>
 </head>
 <body class="container bg-secondary-subtle">
     <div class="my-3 p-3 bg-white">
@@ -16,10 +25,9 @@
 			<table id="app_list_table" class="table table-bordered table-hover nowrap w-100">
 				<thead>
 					<tr class="table-secondary">
-						<th class="text-center" style="min-width: 40px">SL</th>
-						<th class="text-center" style="min-width: 60px">Action</th>
-						<th style="min-width: 200px">App Name</th>
-						<th style="min-width: 300px">Short Description</th>
+						<th class="text-center">SL</th>
+						<th class="text-center d-none d-md-block">Action</th>
+						<th>App Name</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -28,43 +36,55 @@
 					<!-- application list start -->
 					<tr>
 						<td class="text-center">1</td>
-						<td class="text-center">
+						<td class="text-center d-none d-md-block">
 							<a class="btn btn-sm btn-secondary" href="con-volume-est">
 								Use App
 							</a>
 						</td>
-						<td>Concrete Voule Estimator</td>
-						<td></td>
+						<td>
+							<a href="con-volume-est" class="text-decoration-none text-dark">
+								Concrete Voule Estimator
+							</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="text-center">2</td>
-						<td class="text-center">
+						<td class="text-center d-none d-md-block">
 							<a class="btn btn-sm btn-secondary" href="con-mix-design">
 								Use App
 							</a>
 						</td>
-						<td>Concrete Mix Design</td>
-						<td></td>
+						<td>
+							<a href="con-mix-design" class="text-decoration-none text-dark">
+								Concrete Mix Design
+							</a>							
+						</td>
 					</tr>
 					<tr>
 						<td class="text-center">3</td>
-						<td class="text-center">
+						<td class="text-center d-none d-md-block">
 							<a class="btn btn-sm btn-secondary" href="res-building-cost-assumption">
 								Use App
 							</a>
 						</td>
-						<td>Residential Building Cost Assumption</td>
-						<td></td>
+						<td>
+							<a href="res-building-cost-assumption" class="text-decoration-none text-dark">
+								Residential Building Cost Assumption
+							</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="text-center">4</td>
-						<td class="text-center">
+						<td class="text-center d-none d-md-block">
 							<a class="btn btn-sm btn-secondary" href="brick-morter-est">
 								Use App
 							</a>
 						</td>
-						<td>Brick Morter Estimator</td>
-						<td></td>
+						<td>
+							<a href="brick-morter-est" class="text-decoration-none text-dark">
+								Brick Morter Estimator
+							</a>
+						</td>
 					</tr>
 					<!-- application list end -->
 		
@@ -73,9 +93,8 @@
 				<tfoot>
 					<tr class="table-secondary">
 						<th class="text-center">SL</th>
-						<th class="text-center">Action</th>
+						<th class="text-center d-none d-md-block">Action</th>
 						<th>App Name</th>
-						<th>Short Description</th>
 					</tr>
 				</tfoot>
 			</table>
@@ -94,7 +113,7 @@
 				<small>Windows</small>
 			</a> 
 			<small>|</small>
-			<a href="#" class="px-2 text-decoration-none text-muted">
+			<a href="z-tools/civil-helper-android.apk" class="px-2 text-decoration-none text-muted">
 				<small>Android</small>
 			</a> 
 			<small>|</small>
@@ -106,7 +125,7 @@
 				<small>Linux</small>
 			</a>
 		</div>
-		<div class="col-md-4 text-start text-md-end">
+		<div class="col-md-4 text-start text-md-end d-none d-md-block">
 			<p class="text-muted">
 				<small>Caution: use at your own risk.</small><br/>
 				<small>Clear cache to apply latest update.</small><br/>
@@ -118,11 +137,28 @@
     <script src="z-assets/jquery-3.7.0.min.js"></script>
     <script src="z-assets/bootstrap.bundle.min.js"></script>
     <script src="z-assets/datatables.min.js"></script>
+    <script src="z-assets/sweetalert2.all.min.js"></script>
     <script>
+		// init datatable.
         new DataTable('#app_list_table', {
 			responsive: true,
 			order: [[0, 'desc']]
 		});
+		
+		// loader activate.
+		window.onbeforeunload = function() {
+			Swal.fire({
+				html: 'Please Wait...',
+				width: '15rem',
+				padding: '2rem',
+				allowEscapeKey: false,
+				allowOutsideClick: false,
+				showConfirmButton: false,
+				didOpen: ()=> {
+					Swal.showLoading();
+				}
+			});
+		}
     </script>
 </body>
 </html>

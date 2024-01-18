@@ -162,7 +162,7 @@ export default function Home() {
 			<nav className="navbar bg-dark-subtle border-bottom border-secondary">
 				<div className="container">
 					<div className="navbar-brand">Concrete Mix Design</div>
-					<a className="btn btn-light" href="http://civil.webspl.com">
+					<a className="btn btn-light" href="https://civil.webspl.com">
 						HOME
 					</a>
 				</div>
