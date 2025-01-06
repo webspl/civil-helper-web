@@ -48,7 +48,7 @@ export default function Home() {
 		const total_sand_amount = total_sand * rateSand;
 		setResultSand(total_sand.toFixed(2));
 		setResultSandAmount(total_sand_amount.toFixed(2).toLocaleString());
-		const total_stone = dry_volume * ratio_y;
+		const total_stone = dry_volume * ratio_z;
 		const total_stone_amount = total_stone * rateStone;
 		setResultStone(total_stone.toFixed(2));
 		setResultStoneAmount(total_stone_amount.toFixed(2).toLocaleString());
